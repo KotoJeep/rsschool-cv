@@ -1,1 +1,1 @@
-# rsschool-cv
+https://KotoJeep.github.io/rsschool-cv/cv
