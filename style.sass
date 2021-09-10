@@ -1,0 +1,89 @@
+$mc: #174180
+$tc: #56CCF2
+$tw: #ffffff
+
+*
+  font-family: 'Roboto', sans-serif
+  font-size: 20px
+
+h4
+  color: $tc
+li
+  list-style: none
+
+@mixin italic300
+  font-weight: 300
+  font-style: italic
+
+
+
+.aside
+  background-color: $mc
+  color: $tw
+  &-photo
+    max-width: 250px
+    overflow: hidden
+    img
+      width: 100%
+      border-radius: 50%
+  &-social
+    @include italic300
+    li
+      a
+        color: $tw
+        text-decoration: none
+    &_img
+      margin-right: 10px
+      max-width: 20px
+      max-height: 20px
+      border-radius: 20%
+  &-skills
+    @include italic300
+  &-language
+    @include italic300
+    span
+      opacity: 0.8
+  &-interests
+    @include italic300
+
+
+.main
+  font-size: 20px
+  &-about
+    text-align: justify
+  &-education
+    p
+      @include italic300
+
+  &-course
+    &_list
+      li
+        list-style: disc
+        p
+          @include italic300
+          a
+            text-decoration: none
+            color: $tc
+  &-projects
+    &_item
+      text-decoration: none
+      @include italic300
+      color: $tc
+      &:hover
+        color: lighten($tc, 20%)
+    &_card
+      color: $tc
+      @include italic300
+
+.footer
+  // border: 2px solid $mc
+  &_logo 
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+  &_link 
+    max-width: 100px
+    &_img 
+      width: 50%
+
