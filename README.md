@@ -1,1 +1,1 @@
-https://KotoJeep.github.io/rsschool-cv/cv
+https://KotoJeep.github.io/rsschool-cv/
