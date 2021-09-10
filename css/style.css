@@ -1,0 +1,121 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+h4 {
+  color: #56CCF2;
+}
+
+li {
+  list-style: none;
+}
+
+.aside {
+  background-color: #174180;
+  color: #ffffff;
+}
+
+.aside-photo {
+  max-width: 250px;
+  overflow: hidden;
+}
+
+.aside-photo img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.aside-social {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.aside-social li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.aside-social_img {
+  margin-right: 10px;
+  max-width: 20px;
+  max-height: 20px;
+  border-radius: 20%;
+}
+
+.aside-skills {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.aside-language {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.aside-language span {
+  opacity: 0.8;
+}
+
+.aside-interests {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.main {
+  font-size: 20px;
+}
+
+.main-about {
+  text-align: justify;
+}
+
+.main-education p {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.main-course_list li {
+  list-style: disc;
+}
+
+.main-course_list li p {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.main-course_list li p a {
+  text-decoration: none;
+  color: #56CCF2;
+}
+
+.main-projects_item {
+  text-decoration: none;
+  font-weight: 300;
+  font-style: italic;
+  color: #56CCF2;
+}
+
+.main-projects_item:hover {
+  color: #b5e9f9;
+}
+
+.main-projects_card {
+  color: #56CCF2;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.footer_logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer_link {
+  max-width: 100px;
+}
+
+.footer_link_img {
+  width: 50%;
+}
