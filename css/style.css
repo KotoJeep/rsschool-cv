@@ -3,119 +3,195 @@
   font-size: 20px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h4 {
-  color: #56CCF2;
+  text-align: center;
+  display: inline-block;
 }
 
 li {
   list-style: none;
 }
 
-.aside {
-  background-color: #174180;
+.nav-item {
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-item:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  background: none repeat scroll 0 0 transparent;
+  height: 2px;
+  width: 0;
+  background: #8fb1e9;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+  left: 0;
+  color: #8fb1e9;
+}
+
+.about {
+  background: #8fb1e9;
   color: #ffffff;
 }
 
-.aside-photo {
+.about-photo {
   max-width: 250px;
   overflow: hidden;
 }
 
-.aside-photo img {
+.about-photo img {
   width: 100%;
   border-radius: 50%;
 }
 
-.aside-social {
+.skills-item {
+  margin-top: 10px;
   font-weight: 300;
   font-style: italic;
-}
-
-.aside-social li a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.aside-social_img {
-  margin-right: 10px;
-  max-width: 20px;
-  max-height: 20px;
-  border-radius: 20%;
-}
-
-.aside-skills {
-  font-weight: 300;
-  font-style: italic;
-}
-
-.aside-language {
-  font-weight: 300;
-  font-style: italic;
-}
-
-.aside-language span {
-  opacity: 0.8;
-}
-
-.aside-interests {
-  font-weight: 300;
-  font-style: italic;
-}
-
-.main {
-  font-size: 20px;
-}
-
-.main-about {
-  text-align: justify;
-}
-
-.main-education p {
-  font-weight: 300;
-  font-style: italic;
-}
-
-.main-course_list li {
-  list-style: disc;
-}
-
-.main-course_list li p {
-  font-weight: 300;
-  font-style: italic;
-}
-
-.main-course_list li p a {
-  text-decoration: none;
-  color: #56CCF2;
-}
-
-.main-projects_item {
-  text-decoration: none;
-  font-weight: 300;
-  font-style: italic;
-  color: #56CCF2;
-}
-
-.main-projects_item:hover {
-  color: #b5e9f9;
-}
-
-.main-projects_card {
-  color: #56CCF2;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.footer_logo {
   display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 
-.footer_link {
-  max-width: 100px;
+.skills-item_icon {
+  max-width: 30px;
+  margin-right: 5px;
 }
 
-.footer_link_img {
-  width: 50%;
+.skills-item_icon img {
+  width: 100%;
+}
+
+.language {
+  font-weight: 300;
+  font-style: italic;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.language span {
+  opacity: 0.8;
+}
+
+.interests-item {
+  font-weight: 300;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.interests-item_icon {
+  max-width: 30px;
+  margin-right: 5px;
+}
+
+.interests-item_icon img {
+  width: 100%;
+}
+
+.course-list a {
+  text-decoration: underline;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.card {
+  box-shadow: 20px 20px 60px #c0c5f8,-20px -20px 60px #ffffff;
+  height: 100%;
+}
+
+.card-wrapper {
+  height: 9em;
+  background-size: cover;
+}
+
+.card-span {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.javascript {
+  background-color: #cfcfe0;
+}
+
+.contacts-social {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.contacts-social li a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contacts-logo {
+  max-width: 40px;
+  border-radius: 10%;
+}
+
+.contacts-logo path, .contacts-logo circle {
+  fill: #8fb1e9;
+}
+
+.contacts-rs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.contacts-rs_logo {
+  padding: 10px;
+}
+
+.contacts-rs_img {
+  width: 50px;
+}
+
+pre {
+  background-color: #fff !important;
+  box-shadow: 20px 20px 60px #c0c5f8,-20px -20px 60px #ffffff;
+}
+
+@media (max-width: 768px) {
+  .about {
+    text-align: justify;
+  }
+  .about h1, .about h3 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .language {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .skills {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .interests {
+    flex-direction: column;
+    align-items: center;
+  }
+  .course-list {
+    flex-direction: column;
+  }
 }
