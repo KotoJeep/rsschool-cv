@@ -1,13 +1,16 @@
-$mc: #174180
-$tc: #56CCF2
+$mc: #8fb1e9
+$tc: #cfcfe0
 $tw: #ffffff
 
+// #5d93e9
 *
   font-family: 'Roboto', sans-serif
   font-size: 20px
-
+html 
+  scroll-behavior: smooth
 h4
-  color: $tc
+  text-align: center
+  display: inline-block
 li
   list-style: none
 
@@ -15,10 +18,30 @@ li
   font-weight: 300
   font-style: italic
 
+@mixin shadow
+  box-shadow:  20px 20px 60px #c0c5f8,-20px -20px 60px #ffffff
 
+.nav-item
+  cursor: pointer
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 50%
+    display: block
+    background: none repeat scroll 0 0 transparent
+    height: 2px
+    width: 0
+    background: $mc
+    transition: width 0.3s ease 0s, left 0.3s ease 0s
+  &:hover::after
+    width: 100%
+    left: 0
+    color: $mc
 
-.aside
-  background-color: $mc
+.about
+  background: $mc
   color: $tw
   &-photo
     max-width: 250px
@@ -26,64 +49,112 @@ li
     img
       width: 100%
       border-radius: 50%
+
+.skills
+  &-item
+    margin-top: 10px
+    @include italic300
+    display: flex
+    align-items: center
+    &_icon
+      max-width: 30px
+      margin-right: 5px
+      img
+        width: 100%
+
+.language
+  @include italic300
+  display: flex
+  justify-content: space-evenly
+  span
+    opacity: 0.8
+
+.interests
+  &-item
+    @include italic300
+    display: flex
+    align-items: center
+    margin-top: 10px
+    // justify-content: center
+    &_icon
+      max-width: 30px
+      margin-right: 5px
+      img
+        width: 100%
+
+.course
+  &-list
+    a
+      text-decoration: underline
+      @include italic300
+
+.card
+  @include shadow
+  height: 100%
+  &-wrapper
+    height: 9em
+    background-size: cover
+  &-span
+    @include italic300
+    color: 
+
+
+.javascript
+  background-color: $tc
+
+.contacts
   &-social
     @include italic300
     li
       a
-        color: $tw
         text-decoration: none
-    &_img
-      margin-right: 10px
-      max-width: 20px
-      max-height: 20px
-      border-radius: 20%
-  &-skills
-    @include italic300
-  &-language
-    @include italic300
-    span
-      opacity: 0.8
-  &-interests
-    @include italic300
-
-
-.main
-  font-size: 20px
-  &-about
-    text-align: justify
-  &-education
-    p
-      @include italic300
-
-  &-course
-    &_list
-      li
-        list-style: disc
-        p
-          @include italic300
-          a
-            text-decoration: none
-            color: $tc
-  &-projects
-    &_item
-      text-decoration: none
-      @include italic300
-      color: $tc
-      &:hover
-        color: lighten($tc, 20%)
-    &_card
-      color: $tc
-      @include italic300
-
-.footer
-  // border: 2px solid $mc
-  &_logo 
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+  &-logo
+    max-width: 40px
+    border-radius: 10%
+    path,circle
+      fill: $mc
+  &-rs
     display: flex
-    justify-content: space-around
     align-items: center
+    justify-content: center
+    margin: 0 auto
+    &_logo
+      padding: 10px
+    &_img
+      width: 50px
+      // height: 40px
 
-  &_link 
-    max-width: 100px
-    &_img 
-      width: 50%
+pre
+  background-color: #fff !important
+  @include shadow
 
+
+
+@media (max-width: 768px)
+
+  .about
+    text-align: justify
+    h1,h3
+      text-align: center
+
+
+
+@media (max-width: 575px)
+  .language
+    display: flex
+    flex-direction: column
+    text-align: center
+  .skills, 
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  .interests
+    flex-direction: column
+    align-items: center
+  .course
+    &-list
+      flex-direction: column
