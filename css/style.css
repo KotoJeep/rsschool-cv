@@ -16,6 +16,10 @@ li {
   list-style: none;
 }
 
+.bg-dark {
+  background: linear-gradient(90deg, #020024 6%, #090979 60%, #00d4ff 100%) !important;
+}
+
 .nav-item {
   cursor: pointer;
   position: relative;
@@ -30,18 +34,18 @@ li {
   background: none repeat scroll 0 0 transparent;
   height: 2px;
   width: 0;
-  background: #8fb1e9;
+  background: #ffffff;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
 
 .nav-item:hover::after {
   width: 100%;
   left: 0;
-  color: #8fb1e9;
+  color: #ffffff;
 }
 
 .about {
-  background: #8fb1e9;
+  background: linear-gradient(90deg, #020024 6%, #090979 60%, #00d4ff 100%);
   color: #ffffff;
 }
 
@@ -100,6 +104,14 @@ li {
   width: 100%;
 }
 
+.education-span {
+  font-weight: 300;
+  font-style: italic;
+  background: linear-gradient(90deg, #00d4ff 6%, #090979 60%, #020024 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .course-list a {
   text-decoration: underline;
   font-weight: 300;
@@ -112,13 +124,17 @@ li {
 }
 
 .card-wrapper {
-  height: 9em;
+  height: 17em;
   background-size: cover;
+  background-position: center center;
 }
 
 .card-span {
   font-weight: 300;
   font-style: italic;
+  background: linear-gradient(90deg, #00d4ff 6%, #090979 60%, #020024 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .javascript {
@@ -167,12 +183,27 @@ pre {
   box-shadow: 20px 20px 60px #c0c5f8,-20px -20px 60px #ffffff;
 }
 
+@media (max-width: 1200px) {
+  .card-wrapper {
+    height: 13em;
+  }
+}
+
+@media (max-width: 992px) {
+  .card-wrapper {
+    height: 21em;
+  }
+}
+
 @media (max-width: 768px) {
   .about {
     text-align: justify;
   }
   .about h1, .about h3 {
     text-align: center;
+  }
+  .card-wrapper {
+    height: 13em;
   }
 }
 
@@ -193,5 +224,8 @@ pre {
   }
   .course-list {
     flex-direction: column;
+  }
+  .card-wrapper {
+    height: 10em;
   }
 }

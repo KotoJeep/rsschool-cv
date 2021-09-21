@@ -1,8 +1,11 @@
 $mc: #8fb1e9
 $tc: #cfcfe0
 $tw: #ffffff
+$gradient: linear-gradient(90deg, rgba(2,0,36,1) 6%, rgba(9,9,121,1) 60%, rgba(0,212,255,1) 100%)
+$gradient2: linear-gradient(90deg, rgba(0,212,255,1) 6%, rgba(9,9,121,1) 60%, rgba(2,0,36,1) 100%)
 
-// #5d93e9
+
+
 *
   font-family: 'Roboto', sans-serif
   font-size: 20px
@@ -14,12 +17,24 @@ h4
 li
   list-style: none
 
+
 @mixin italic300
   font-weight: 300
   font-style: italic
 
 @mixin shadow
   box-shadow:  20px 20px 60px #c0c5f8,-20px -20px 60px #ffffff
+
+@mixin text-gradient
+  background: $gradient2
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.bg-dark
+  background: $gradient !important
+
+
+
 
 .nav-item
   cursor: pointer
@@ -33,15 +48,15 @@ li
     background: none repeat scroll 0 0 transparent
     height: 2px
     width: 0
-    background: $mc
+    background: $tw
     transition: width 0.3s ease 0s, left 0.3s ease 0s
   &:hover::after
     width: 100%
     left: 0
-    color: $mc
+    color: $tw
 
 .about
-  background: $mc
+  background: $gradient
   color: $tw
   &-photo
     max-width: 250px
@@ -75,13 +90,16 @@ li
     display: flex
     align-items: center
     margin-top: 10px
-    // justify-content: center
     &_icon
       max-width: 30px
       margin-right: 5px
       img
         width: 100%
 
+.education
+  &-span
+    @include italic300
+    @include text-gradient
 .course
   &-list
     a
@@ -92,11 +110,12 @@ li
   @include shadow
   height: 100%
   &-wrapper
-    height: 9em
+    height: 17em
     background-size: cover
+    background-position: center center
   &-span
     @include italic300
-    color: 
+    @include text-gradient
 
 
 .javascript
@@ -126,22 +145,25 @@ li
       padding: 10px
     &_img
       width: 50px
-      // height: 40px
 
 pre
   background-color: #fff !important
   @include shadow
 
-
+@media (max-width: 1200px)
+  .card-wrapper
+    height: 13em
+@media (max-width: 992px)
+  .card-wrapper
+    height: 21em
 
 @media (max-width: 768px)
-
   .about
     text-align: justify
     h1,h3
       text-align: center
-
-
+  .card-wrapper
+    height: 13em
 
 @media (max-width: 575px)
   .language
@@ -158,3 +180,5 @@ pre
   .course
     &-list
       flex-direction: column
+  .card-wrapper
+    height: 10em
